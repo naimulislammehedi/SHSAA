@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silonia High School Alumni Association</title>
+    <!-- Favicon (using logo) -->
+    <link rel="icon" type="image/png" href="shsaa.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10355D", // Deep Blue from logo
+              secondary: "#3D8C40", // Green from logo
+              accent: "#D4AF37", // Premium Gold
+              light: "#F8FAFC",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              bengali: ["Hind Siliguri", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body class="font-sans text-slate-800 bg-light">
+    <!-- 1. NAVBAR -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-4 glass-nav border-b border-slate-100"
+    >
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-3">
+          <div
+            class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden border border-slate-200"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="SHSAA Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-primary font-bold leading-none tracking-tight"
+              >SILONIA HIGH SCHOOL</span
+            >
+            <span
+              class="text-[10px] text-secondary font-semibold uppercase tracking-widest"
+              >Alumni Association</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="font-medium text-slate-600 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-medium text-slate-600 hover:text-primary transition-colors"
+            >About</a
+          >
+          <a
+            href="#committee"
+            class="font-medium text-slate-600 hover:text-primary transition-colors"
+            >Committee</a
+          >
+          <a
+            href="#activities"
+            class="font-medium text-slate-600 hover:text-primary transition-colors"
+            >Activities</a
+          >
+          <a
+            href="#contact"
+            class="btn-gradient text-white px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-all shadow-md"
+            >Join Network</a
+          >
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="md:hidden text-primary" onclick="toggleMobileMenu()">
+          <i class="fa-solid fa-bars-staggered text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 p-6 flex flex-col space-y-4 shadow-xl"
+      >
+        <a
+          href="#home"
+          onclick="toggleMobileMenu()"
+          class="text-lg font-semibold text-primary"
+          >Home</a
+        >
+        <a
+          href="#about"
+          onclick="toggleMobileMenu()"
+          class="text-lg font-semibold text-primary"
+          >About</a
+        >
+        <a
+          href="#committee"
+          onclick="toggleMobileMenu()"
+          class="text-lg font-semibold text-primary"
+          >Committee</a
+        >
+        <a
+          href="#activities"
+          onclick="toggleMobileMenu()"
+          class="text-lg font-semibold text-primary"
+          >Activities</a
+        >
+        <a
+          href="#contact"
+          onclick="toggleMobileMenu()"
+          class="text-lg font-semibold text-secondary"
+          >Contact Us</a
+        >
+      </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section
+      id="home"
+      class="hero-image-bg min-h-screen flex items-center relative pt-20"
+    >
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div
+        class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="text-white space-y-8 py-12">
+          <div
+            class="inline-flex items-center gap-3 bg-secondary/20 backdrop-blur-md px-4 py-2 rounded-full border border-secondary/30"
+          >
+            <span class="relative flex h-3 w-3">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-3 w-3 bg-accent"
+              ></span>
+            </span>
+            <span
+              class="text-sm font-semibold tracking-wide text-white uppercase"
+              >Reconnecting Excellence</span
+            >
+          </div>
+
+          <h1
+            class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] drop-shadow-lg"
+          >
+            Silonia High <br />
+            <span class="text-accent italic font-light">Alumni</span>
+            Association
+          </h1>
+
+          <p
+            class="text-lg md:text-xl text-slate-200 max-w-lg leading-relaxed font-light"
+          >
+            Bringing together the past, present, and future of Silonia High
+            School. Join a community of professionals, leaders, and lifelong
+            friends.
+          </p>
+
+          <div class="flex flex-wrap gap-5 pt-4">
+            <a
+              href="#contact"
+              class="bg-secondary text-white px-10 py-4 rounded-2xl font-bold hover:bg-secondary/90 transition-all shadow-xl shadow-secondary/20 flex items-center gap-3"
+            >
+              Get Started <i class="fa-solid fa-chevron-right text-xs"></i>
+            </a>
+            <a
+              href="#about"
+              class="bg-white/10 border border-white/20 backdrop-blur-md text-white px-10 py-4 rounded-2xl font-bold hover:bg-white hover:text-primary transition-all"
+            >
+              Our Story
+            </a>
+          </div>
+
+          <!-- Stats Summary -->
+          <div class="flex gap-10 pt-8 border-t border-white/10 w-fit">
+            <div>
+              <div class="text-3xl font-bold text-accent">500+</div>
+              <div class="text-sm text-slate-400 uppercase tracking-widest">
+                Members
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-accent">1998+</div>
+              <div class="text-sm text-slate-400 uppercase tracking-widest">
+                Legacy
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Component -->
+        <div class="hidden lg:flex justify-end items-center">
+          <div
+            class="relative w-full max-w-md bg-white/10 backdrop-blur-xl p-8 rounded-[3rem] border border-white/20 shadow-2xl"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="Silonia Emblem"
+              class="w-32 mx-auto mb-8 drop-shadow-2xl"
+            />
+            <div class="text-center space-y-4">
+              <h4 class="text-2xl font-bold text-white">Join Our Registry</h4>
+              <p class="text-slate-300 text-sm">
+                Be part of the official database of Silonia High School
+                graduates.
+              </p>
+              <div class="grid grid-cols-2 gap-4 pt-4">
+                <div
+                  class="bg-white/5 p-4 rounded-2xl border border-white/10 text-center"
+                >
+                  <i class="fa-solid fa-briefcase text-accent mb-2 text-xl"></i>
+                  <p class="text-[10px] text-slate-400 uppercase">Jobs</p>
+                </div>
+                <div
+                  class="bg-white/5 p-4 rounded-2xl border border-white/10 text-center"
+                >
+                  <i
+                    class="fa-solid fa-network-wired text-secondary mb-2 text-xl"
+                  ></i>
+                  <p class="text-[10px] text-slate-400 uppercase">Networking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-24 bg-white relative">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <h2
+              class="text-sm font-bold text-secondary uppercase tracking-[0.3em] mb-4"
+            >
+              The Legacy
+            </h2>
+            <h3 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+              Empowering our graduates to lead and inspire.
+            </h3>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+              The Silonia High School Alumni Association was established to
+              maintain a lifelong connection between the school and its former
+              students. We believe that our collective strength can pave the way
+              for a brighter future.
+            </p>
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/5 rounded-full flex-shrink-0 flex items-center justify-center text-primary"
+                >
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary">Our Mission</h4>
+                  <p class="text-slate-500">
+                    To foster a vibrant community where alumni can support each
+                    other professionally and contribute to school development.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-secondary/5 rounded-full flex-shrink-0 flex items-center justify-center text-secondary"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary">Our Vision</h4>
+                  <p class="text-slate-500">
+                    To create a globally recognized network of successful
+                    professionals rooted in the values of Silonia High School.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 reveal">
+            <div class="space-y-4 pt-12">
+              <div
+                class="h-64 bg-slate-100 rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+              >
+                <img
+                  src="https://voca-land.sgp1.cdn.digitaloceanspaces.com/43844/1767355329430/a3f562e7.jpg"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  alt="Alumni 1"
+                />
+              </div>
+              <div
+                class="h-40 bg-primary rounded-3xl p-6 text-white flex flex-col justify-end"
+              >
+                <span class="text-4xl font-bold">500+</span>
+                <span class="text-sm opacity-80 uppercase tracking-widest"
+                  >Active Members</span
+                >
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="h-40 bg-secondary rounded-3xl p-6 text-white flex flex-col justify-end"
+              >
+                <span class="text-4xl font-bold">1+</span>
+                <span class="text-sm opacity-80 uppercase tracking-widest"
+                  >Years of Legacy</span
+                >
+              </div>
+              <div
+                class="h-64 bg-slate-100 rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  alt="Alumni 2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COMMITTEE SECTION -->
+    <section id="committee" class="py-24 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <h2
+            class="text-sm font-bold text-secondary uppercase tracking-[0.3em] mb-4"
+          >
+            Leadership
+          </h2>
+          <h3
+            class="text-3xl md:text-4xl font-bold text-primary font-bengali uppercase tracking-tight"
+          >
+            আহ্বায়ক কমিটি
+          </h3>
+          <p class="text-slate-500 mt-4">
+            The steering committee leading the vision of our association.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Convenor -->
+          <div
+            class="committee-card bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all group reveal"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <span
+                class="role-badge bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full transition-colors uppercase tracking-wider"
+                >আহ্বায়ক</span
+              >
+            </div>
+            <h4 class="text-xl font-bold text-primary font-bengali">
+              আশরাফুল রহমান
+            </h4>
+            <p class="text-slate-500 text-sm mt-1 mb-4 italic">
+              ঢাকা বিশ্ববিদ্যালয় (ঢাবি)
+            </p>
+            <div
+              class="h-1 w-12 bg-secondary rounded-full group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+
+          <!-- Joint Convenors -->
+          <div
+            class="committee-card bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all group reveal"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span
+                class="role-badge bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full transition-colors uppercase tracking-wider"
+                >যুগ্ম আহ্বায়ক</span
+              >
+            </div>
+            <h4 class="text-xl font-bold text-primary font-bengali">
+              রাকিবুল মারুফ
+            </h4>
+            <p class="text-slate-500 text-sm mt-1 mb-4 italic">
+              ঢাকা মেডিকেল কলেজ (ঢামেক)
+            </p>
+            <div
+              class="h-1 w-12 bg-accent rounded-full group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+
+          <div
+            class="committee-card bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all group reveal"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span
+                class="role-badge bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full transition-colors uppercase tracking-wider"
+                >যুগ্ম আহ্বায়ক</span
+              >
+            </div>
+            <h4 class="text-xl font-bold text-primary font-bengali">
+              সালমা আক্তার
+            </h4>
+            <p class="text-slate-500 text-sm mt-1 mb-4 italic">
+              জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (জাবি)
+            </p>
+            <div
+              class="h-1 w-12 bg-accent rounded-full group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+
+          <div
+            class="committee-card bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all group reveal"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <span
+                class="role-badge bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full transition-colors uppercase tracking-wider"
+                >যুগ্ম আহ্বায়ক</span
+              >
+            </div>
+            <h4 class="text-xl font-bold text-primary font-bengali">
+              সুরাইয়া সুলতানা
+            </h4>
+            <p class="text-slate-500 text-sm mt-1 mb-4 italic">
+              জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (জাবি)
+            </p>
+            <div
+              class="h-1 w-12 bg-accent rounded-full group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+
+          <!-- Member Secretary -->
+          <div
+            class="committee-card bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all group reveal"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-16 h-16 bg-accent/5 rounded-2xl flex items-center justify-center text-accent text-2xl group-hover:bg-accent group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-file-pen"></i>
+              </div>
+              <span
+                class="role-badge bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full transition-colors uppercase tracking-wider"
+                >সদস্য সচিব</span
+              >
+            </div>
+            <h4 class="text-xl font-bold text-primary font-bengali">
+              রাখি রানী নাথ
+            </h4>
+            <p class="text-slate-500 text-sm mt-1 mb-4 italic">
+              জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (জাবি)
+            </p>
+            <div
+              class="h-1 w-12 bg-primary rounded-full group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Other Members -->
+        <div
+          class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-100 reveal shadow-sm"
+        >
+          <h4
+            class="text-center font-bold text-primary font-bengali mb-10 text-xl tracking-wider"
+          >
+            কার্যকরী সদস্যবৃন্দ
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div class="text-center group">
+              <div
+                class="w-12 h-12 bg-slate-50 shadow-sm rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p class="font-bold text-primary font-bengali">মাহফুজা নাহিন</p>
+              <p
+                class="text-[10px] text-secondary uppercase font-bold tracking-tighter"
+              >
+                সদস্য
+              </p>
+            </div>
+            <div class="text-center group">
+              <div
+                class="w-12 h-12 bg-slate-50 shadow-sm rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p class="font-bold text-primary font-bengali">জাহিদুল ইসলাম</p>
+              <p
+                class="text-[10px] text-secondary uppercase font-bold tracking-tighter"
+              >
+                সদস্য
+              </p>
+            </div>
+            <div class="text-center group">
+              <div
+                class="w-12 h-12 bg-slate-50 shadow-sm rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p class="font-bold text-primary font-bengali">সাইফুর রহমান</p>
+              <p
+                class="text-[10px] text-secondary uppercase font-bold tracking-tighter"
+              >
+                সদস্য
+              </p>
+            </div>
+            <div class="text-center group">
+              <div
+                class="w-12 h-12 bg-slate-50 shadow-sm rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p class="font-bold text-primary font-bengali">এহসান নিশাত</p>
+              <p
+                class="text-[10px] text-secondary uppercase font-bold tracking-tighter"
+              >
+                সদস্য
+              </p>
+            </div>
+            <div class="text-center group">
+              <div
+                class="w-12 h-12 bg-slate-50 shadow-sm rounded-full mx-auto mb-3 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <p class="font-bold text-primary font-bengali">নাইমু ইসলাম</p>
+              <p
+                class="text-[10px] text-secondary uppercase font-bold tracking-tighter"
+              >
+                সদস্য
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ACTIVITIES SECTION -->
+    <section id="activities" class="py-24 bg-white overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <h2
+            class="text-sm font-bold text-secondary uppercase tracking-[0.3em] mb-4"
+          >
+            What We Do
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-bold text-primary">
+            Creating Opportunities
+          </h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+          <div
+            class="group relative bg-slate-50 p-8 rounded-3xl overflow-hidden hover:bg-primary transition-colors duration-500"
+          >
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary text-xl mb-6 shadow-sm group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h4
+                class="text-xl font-bold mb-3 group-hover:text-white transition-colors"
+              >
+                Seminars
+              </h4>
+              <p
+                class="text-slate-500 text-sm group-hover:text-slate-300 transition-colors"
+              >
+                Career guidance and knowledge sharing sessions by established
+                alumni.
+              </p>
+            </div>
+            <div
+              class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/5 group-hover:bg-white/5 rounded-full transition-colors"
+            ></div>
+          </div>
+
+          <div
+            class="group relative bg-slate-50 p-8 rounded-3xl overflow-hidden hover:bg-secondary transition-colors duration-500"
+          >
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-secondary text-xl mb-6 shadow-sm group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <h4
+                class="text-xl font-bold mb-3 group-hover:text-white transition-colors"
+              >
+                Student Support
+              </h4>
+              <p
+                class="text-slate-500 text-sm group-hover:text-slate-100 transition-colors"
+              >
+                Financial aid and mentorship programs for deserving current
+                students.
+              </p>
+            </div>
+            <div
+              class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/5 group-hover:bg-white/5 rounded-full transition-colors"
+            ></div>
+          </div>
+
+          <div
+            class="group relative bg-slate-50 p-8 rounded-3xl overflow-hidden hover:bg-accent transition-colors duration-500"
+          >
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-accent text-xl mb-6 shadow-sm group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h4
+                class="text-xl font-bold mb-3 group-hover:text-primary transition-colors"
+              >
+                Award Program
+              </h4>
+              <p
+                class="text-slate-500 text-sm group-hover:text-primary/70 transition-colors"
+              >
+                Recognizing excellence in academics, sports, and professional
+                fields.
+              </p>
+            </div>
+            <div
+              class="absolute -right-8 -bottom-8 w-32 h-32 bg-accent/5 group-hover:bg-white/5 rounded-full transition-colors"
+            ></div>
+          </div>
+
+          <div
+            class="group relative bg-slate-50 p-8 rounded-3xl overflow-hidden hover:bg-primary transition-colors duration-500"
+          >
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary text-xl mb-6 shadow-sm group-hover:scale-110 transition-transform"
+              >
+                <i class="fa-solid fa-mug-hot"></i>
+              </div>
+              <h4
+                class="text-xl font-bold mb-3 group-hover:text-white transition-colors"
+              >
+                Meetups
+              </h4>
+              <p
+                class="text-slate-500 text-sm group-hover:text-slate-300 transition-colors"
+              >
+                Annual gatherings to celebrate friendship and shared history.
+              </p>
+            </div>
+            <div
+              class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/5 group-hover:bg-white/5 rounded-full transition-colors"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-primary text-white relative">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <h2
+              class="text-sm font-bold text-secondary uppercase tracking-[0.3em] mb-4"
+            >
+              Connect
+            </h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-6">
+              Stay In Touch With Your Roots
+            </h3>
+            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+              Have questions or want to volunteer? Send us a message and we'll
+              get back to you shortly.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-secondary border border-white/10"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <span class="text-slate-300">Silonia, Feni, Bangladesh</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-secondary border border-white/10"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <span class="text-slate-300">alumni@siloniahighschool.edu</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl reveal text-slate-800"
+          >
+            <form
+              id="contactForm"
+              onsubmit="handleFormSubmit(event)"
+              class="space-y-6"
+            >
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    required
+                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-widest text-slate-400"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  required
+                  class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full btn-gradient text-white font-bold py-4 rounded-xl hover:opacity-90 transition-all shadow-lg"
+              >
+                Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-white py-12 border-t border-slate-100">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="./assets/logo.png"
+              class="h-12 w-auto"
+              alt="Footer Logo"
+            />
+            <div>
+              <p class="text-primary font-bold text-sm tracking-tighter">
+                SILONIA HIGH SCHOOL
+              </p>
+              <p class="text-slate-400 text-[10px] font-medium uppercase">
+                &copy; 2024 Alumni Association. All Rights Reserved.
+              </p>
+
+              <p class="text-slate-500 text-[10px] mt-2">
+                Designed & Developed by Mehedi |
+                <a
+                  href="https://www.facebook.com/naimulislammehedi1/"
+                  class="hover:text-blue-500"
+                  >Facebook</a
+                >
+                ·
+                <a
+                  href="https://www.linkedin.com/in/naimulislammehedi/"
+                  class="hover:text-blue-500"
+                  >LinkedIn</a
+                >
+                ·
+                <a
+                  href="https://github.com/naimulislammehedi"
+                  class="hover:text-blue-500"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom Modal -->
+    <div
+      id="modal"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/60 backdrop-blur-md"
+    >
+      <div
+        class="bg-white rounded-[2rem] p-8 max-w-sm w-full shadow-2xl text-center transform transition-all"
+      >
+        <div
+          class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-6 text-2xl"
+        >
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h4 class="text-xl font-bold text-primary mb-2">Message Sent!</h4>
+        <p class="text-slate-500 mb-6">
+          Thank you for reaching out. Our team will contact you shortly.
+        </p>
+        <button
+          onclick="closeModal()"
+          class="w-full btn-gradient text-white font-bold py-3 rounded-xl hover:opacity-90 transition-all"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script src="./JS/main.js"></script>
+  </body>
+</html>

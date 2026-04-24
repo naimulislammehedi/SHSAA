@@ -1,0 +1,50 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #10355d;
+  border-radius: 10px;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(16, 53, 93, 0.95) 30%,
+    rgba(16, 53, 93, 0.4) 100%
+  );
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.committee-card:hover .role-badge {
+  background-color: #d4af37;
+  color: #10355d;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #10355d 0%, #3d8c40 100%);
+}
+
+.hero-image-bg {
+  background-image: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
